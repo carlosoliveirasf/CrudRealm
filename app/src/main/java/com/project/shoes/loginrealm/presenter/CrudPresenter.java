@@ -35,7 +35,7 @@ public class CrudPresenter {
         } catch (RealmPrimaryKeyConstraintException e) {
             e.getMessage();
             realm.cancelTransaction();
-            crudView.sucess();
+            crudView.failure();
         }
     }
 }

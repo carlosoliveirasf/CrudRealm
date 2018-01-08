@@ -12,7 +12,6 @@ import io.realm.exceptions.RealmPrimaryKeyConstraintException;
 
 public class CrudPresenter {
     private CrudView crudView;
-    private Integer id = 0;
 
     public CrudPresenter(CrudView crudView) {
         this.crudView = crudView;
@@ -29,7 +28,7 @@ public class CrudPresenter {
     public void registerUser(Realm realm, String user, String password){
         try {
             realm.beginTransaction();
-            realm.copyToRealm(new UserVO(++id, user, password));
+            realm.copyToRealm(new UserVO(user, password));
             realm.commitTransaction();
             crudView.sucess();
         } catch (RealmPrimaryKeyConstraintException e) {

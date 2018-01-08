@@ -10,15 +10,13 @@ import io.realm.annotations.PrimaryKey;
 public class UserVO extends RealmObject {
 
     @PrimaryKey
-    private Integer id;
     private String user;
     private String password;
 
     public UserVO() {
     }
 
-    public UserVO(Integer id, String user, String password) {
-        this.id = id;
+    public UserVO(String user, String password) {
         this.user = user;
         this.password = password;
     }
@@ -29,14 +27,6 @@ public class UserVO extends RealmObject {
 
     public void setUser(String user) {
         this.user = user;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getPassword() {
